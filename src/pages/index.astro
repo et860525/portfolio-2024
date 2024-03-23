@@ -3,15 +3,15 @@ import Layout from "../layouts/Layout.astro";
 
 const section =
   "flex flex-col sm:flex-row justify-center my-16 md:my-20 items-baseline";
-const h2Tag = "text-crusta-900 leading-normal self-center	sm:self-auto px-3";
+const h2Tag = "text-crusta-900 leading-normal self-center	sm:self-auto pr-3";
 const mainText = "grow leading-relaxed text-left";
 const linkClass = "text-white hover:underline underline-offset-4";
 ---
 
-<Layout title="Home Page">
-  <main class="bg-crusta-400 h-screen px-5 text-[#27272A] overflow-y-auto">
+<Layout title="Home Page" bgColor="bg-crusta-300">
+  <main class="px-10 text-[#27272A]">
     <h1
-      class="text-5xl sm:text-6xl sm:text-7xl pt-10 text-center tracking-widest font-semibold"
+      class="text-5xl sm:text-6xl sm:text-7xl pt-8 text-center tracking-widest font-semibold"
     >
       <a href="/"><span class="text-crusta-900">#</span> Yufan</a>
     </h1>
@@ -22,8 +22,8 @@ const linkClass = "text-white hover:underline underline-offset-4";
         <span class={h2Tag}>##</span>
         <p class={mainText}>
           你好~我是來自台灣的網站開發人員。我喜歡建立簡單且直觀的設計，不論是前端還是後端，這裡有我已經完成的各種<a
-            href="/work"
-            class={linkClass}>工作</a
+            href="/projects"
+            class={linkClass}>專案</a
           >。
         </p>
       </div>
@@ -42,10 +42,3 @@ const linkClass = "text-white hover:underline underline-offset-4";
     </div>
   </main>
 </Layout>
-
-<style>
-  h1,
-  p {
-    font-family: "Noto Sans TC", sans-serif;
-  }
-</style>

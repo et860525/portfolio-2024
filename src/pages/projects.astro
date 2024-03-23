@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectImg from "../../public/images/Morning-things.png";
+import QuizImg from "../../public/images/Quiz.jpeg";
+
+const projects = [
+  {
+    title: "Morning things",
+    image: ProjectImg,
+    content:
+      "讓使用打開網站就能看到今天一早所有的大小事的專案。使用的技術有：<ul class='list-disc pl-10 mb-5'><li>Vue</li><li>TypeScript</li><li>Vite</li><li>Tailwind CSS</li></ul>",
+    tags: ["HTML", "CSS", "JS", "Vue"],
+    url: "https://github.com/et860525/Morning-things",
+  },
+  {
+    title: "Quiz",
+    image: QuizImg,
+    content:
+      "使用 Unity 3D 製作的手機遊戲，使用者需要在四個選項裡，選出與題目相同的翻譯。有兩種模式：<ul class='list-disc pl-10 mb-5'><li>中文題目選日文</li><li>日文題目選中文</li></ul>",
+    tags: ["Game", "Unity 3D"],
+    url: "https://github.com/et860525/QuizF",
+  },
+];
+---
+
+<Layout title="Work" bgColor="bg-crusta-100">
+  <main class="max-w-screen-lg mx-auto h-screen px-5 sm:px-10 text-[#27272A]">
+    <div class="flex flex-col mt-[20vh]">
+      <h1
+        class="text-5xl sm:text-7xl tracking-widest font-semibold before:content-['@']"
+      >
+        YuFan
+      </h1>
+      <div class="my-20 text-xl tracking-wide">
+        <p class="mb-10">
+          你好~我是來自台灣的網站開發人員，不論是前端還是後端，我都喜歡建立簡單且直觀的設計。
+        </p>
+        <p>
+          Hello! I'm a website developer from Taiwan. I enjoy creating simple
+          and intuitive designs, whether it's on the front-end or back-end.
+        </p>
+      </div>
+      <h2
+        class="text-3xl sm:text-4xl text-center tracking-wide my-10 font-semibold
+        after:content-[' '] after:border-crusta-400 after:w-32 sm:after:w-40 after:mx-auto after:border-4 after:block after:mt-5 after:rounded"
+      >
+        Projects
+      </h2>
+      <div class="projects">
+        {
+          projects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              image={project.image}
+              content={project.content}
+              tags={project.tags}
+              url={project.url}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>

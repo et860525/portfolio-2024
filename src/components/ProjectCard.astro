@@ -1,0 +1,48 @@
+---
+import type { ImageMetadata } from "astro";
+import GithubSVG from "../../public/svgs/github-mark.svg";
+import ProjectImg from "../../public/images/Morning-things.png";
+
+export interface Props {
+  title: string;
+  image: ImageMetadata;
+  content: string;
+  tags: string[];
+  url: string;
+}
+
+const { title, image = ProjectImg, content, tags, url } = Astro.props;
+---
+
+<div
+  class="project-card p-9 lg:p-0 mb-10 bg-crusta-200 rounded-lg drop-shadow-xl tracking-wide lg:flex justify-end relative overflow-hidden"
+>
+  <img
+    src={image.src}
+    class="project-img absolute top-0 left-0 w-7/12 hidden lg:block rounded"
+  />
+  <div class="project-content z-10 lg:w-5/12 lg:p-9">
+    <h3 class="text-2xl sm:text-3xl mb-8 font-semibold">{title}</h3>
+    <p class="mb-5" set:html={content} />
+    <div class="project-tags mb-5">
+      <div class="flex flex-wrap gap-1">
+        {
+          tags.map((tag) => (
+            <span class=" border-2 border-crusta-500 text-crusta-500 py-1 px-3 rounded font-semibold">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+    <div class="project-link">
+      <a
+        href={url}
+        class="bg-crusta-500 hover:bg-crusta-600 text-white font-bold py-2 px-4 rounded"
+      >
+        <img src={GithubSVG.src} alt="" class="w-5 inline align-text-top" /> View
+        Source</a
+      >
+    </div>
+  </div>
+</div>
