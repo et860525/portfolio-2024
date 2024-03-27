@@ -28,9 +28,10 @@ const { title, bgColor } = Astro.props;
   </body>
 </html>
 
-<style>
-  h1,
-  p {
+<style is:global>
+  .noto-sans {
     font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 </style>
