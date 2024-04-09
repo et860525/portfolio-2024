@@ -15,20 +15,20 @@ const { title, image = ProjectImg, content, tags, url } = Astro.props;
 ---
 
 <div
-  class="project-card p-9 lg:p-0 mb-10 bg-crusta-200 rounded-lg drop-shadow-xl tracking-wide lg:flex justify-end relative overflow-hidden"
+  class="relative justify-end mb-10 overflow-hidden tracking-wide rounded-lg project-card p-9 lg:p-0 bg-crusta-200 dark:bg-[#454652] drop-shadow-xl lg:flex"
 >
   <img
     src={image.src}
-    class="project-img absolute top-0 left-0 w-7/12 hidden lg:block rounded"
+    class="absolute top-0 left-0 hidden w-7/12 rounded project-img lg:block"
   />
-  <div class="project-content z-10 lg:w-5/12 lg:p-9">
-    <h3 class="text-2xl sm:text-3xl mb-8 font-semibold">{title}</h3>
+  <div class="z-10 project-content lg:w-5/12 lg:p-9">
+    <h3 class="mb-8 text-2xl font-semibold sm:text-3xl">{title}</h3>
     <p class="mb-5" set:html={content} />
-    <div class="project-tags mb-5">
+    <div class="mb-5 project-tags">
       <div class="flex flex-wrap gap-1">
         {
           tags.map((tag) => (
-            <span class=" border-2 border-crusta-500 text-crusta-500 py-1 px-3 rounded font-semibold">
+            <span class="px-3 py-1 font-semibold border-2 rounded border-crusta-500 text-crusta-500">
               {tag}
             </span>
           ))
@@ -38,9 +38,9 @@ const { title, image = ProjectImg, content, tags, url } = Astro.props;
     <div class="project-link">
       <a
         href={url}
-        class="bg-crusta-500 hover:bg-crusta-600 text-white font-bold py-2 px-4 rounded"
+        class="px-4 py-2 font-bold text-white rounded bg-crusta-500 hover:bg-crusta-600"
       >
-        <img src={GithubSVG.src} alt="" class="w-5 inline pb-1" /> View Source</a
+        <img src={GithubSVG.src} alt="" class="inline w-5 pb-1" /> View Source</a
       >
     </div>
   </div>
