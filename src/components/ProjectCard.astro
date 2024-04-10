@@ -15,7 +15,7 @@ const { title, image = ProjectImg, content, tags, url } = Astro.props;
 ---
 
 <div
-  class="relative justify-end mb-10 overflow-hidden tracking-wide rounded-lg project-card p-9 lg:p-0 bg-crusta-200 dark:bg-[#454652] drop-shadow-xl lg:flex"
+  class="relative justify-end mb-10 overflow-hidden tracking-wide rounded-lg project-card p-9 lg:p-0 bg-crusta-200 dark:bg-mirage-900 drop-shadow-xl lg:flex"
 >
   <img
     src={image.src}
@@ -28,7 +28,7 @@ const { title, image = ProjectImg, content, tags, url } = Astro.props;
       <div class="flex flex-wrap gap-1">
         {
           tags.map((tag) => (
-            <span class="px-3 py-1 font-semibold border-2 rounded border-crusta-500 text-crusta-500 dark:border-[#76a1ff] dark:text-[#76a1ff]">
+            <span class="px-3 py-1 font-semibold border-2 rounded border-crusta-500 text-crusta-500 dark:border-primary dark:text-primary">
               {tag}
             </span>
           ))
@@ -38,7 +38,7 @@ const { title, image = ProjectImg, content, tags, url } = Astro.props;
     <div class="project-link">
       <a
         href={url}
-        class="px-4 py-2 font-bold text-white rounded bg-crusta-500 hover:bg-crusta-600 dark:bg-[#76a1ff] dark:hover:bg-[#5d8cfd]"
+        class="px-4 py-2 font-bold text-white rounded bg-crusta-500 hover:bg-crusta-600 dark:bg-primary dark:hover:bg-[#5d8cfd]"
       >
         <img src={GithubSVG.src} alt="" class="inline w-5 pb-1" /> View Source</a
       >
